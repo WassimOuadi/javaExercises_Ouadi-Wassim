@@ -27,10 +27,10 @@ public class UserService {
     }
 
     public User createUser(String name, int age) {
-        int id = users.size() + 1;
-        User user = new User(id, name, age);
-        users.add(user);
-        return null;
+        
+        User user = new User(this.users.size() + 1, name, age);
+        this.users.add(user);
+        return user;
     }
 
     public User updateUser(int id, String name, int age){
@@ -41,6 +41,17 @@ public class UserService {
                 return user;
             }
         }
+        return null;
+    }
+
+        public User deleteUser(int id) {
+        for (User user : this.users) {
+            if (user.getId() == id) {
+                int index = this.users.indexOf(user);
+                return this.users.remove(index);
+            }
+        }
+
         return null;
         
     }
