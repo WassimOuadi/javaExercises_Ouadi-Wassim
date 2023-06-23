@@ -34,7 +34,7 @@ public class UserService {
     }
 
     public User updateUser(int id, String name, int age){
-        for (User user : users) {
+        for (User user : this.users) {
             if(user.getId() == id){
                 user.setName(name);
                 user.setAge(age);
