@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import org.springframework.stereotype.Service;
 
 import fr.ouadi.myApi.model.Animal;
+import fr.ouadi.myApi.model.User;
 
 @Service
 public class AnimalService {
@@ -27,6 +28,18 @@ public class AnimalService {
         Animal animal = new Animal(this.animals.size() + 1, name, type, weight);
         this.animals.add(animal);
         return animal;
+    }
+
+     public Animal updateAnimal(int id, String name, String type,int weight){
+        for (Animal animal : this.animals) {
+            if(animal.getId() == id){
+                animal.setName(name);
+                animal.setType(type);
+                animal.setWeight(weight);
+                return animal;
+            }
+        }
+        return null;
     }
     
 }
