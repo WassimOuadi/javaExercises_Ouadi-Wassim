@@ -41,5 +41,15 @@ public class AnimalService {
         }
         return null;
     }
+
+    public Animal deleteAnimal(int id) {
+        for (Animal animal : this.animals) {
+            if (animal.getId() == id) {
+                int index = this.animals.indexOf(animal);
+                return this.animals.remove(index);
+            }
+        }
+        return null;     
+    }
     
 }
