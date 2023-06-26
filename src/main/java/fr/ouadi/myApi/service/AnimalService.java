@@ -22,5 +22,11 @@ public class AnimalService {
         }
         return null;
     }
+
+    public Animal createAnimal(String name, String type, int weight){
+        Animal animal = new Animal(this.animals.size() + 1, name, type, weight);
+        this.animals.add(animal);
+        return animal;
+    }
     
 }
