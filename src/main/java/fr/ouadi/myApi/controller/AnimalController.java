@@ -24,6 +24,11 @@ public class AnimalController {
     @PostMapping("/animal")
     public Animal createAnimal(@RequestBody AnimalRequest body){
         
+        String name = body.getName();
+        String type = body.getType();
+        int weight = body.getWeight();
+        Animal animal = animalService.createAnimal(name, type, weight);
+        return animal;
     }
 }
 
