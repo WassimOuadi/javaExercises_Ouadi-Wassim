@@ -5,7 +5,15 @@ public class Animal {
     private String name;
     private String type;
     private int weight;
+
     
+    
+    public Animal(int id, String name, String type, int weight) {
+        this.id = id;
+        this.name = name;
+        this.type = type;
+        this.weight = weight;
+    }
     public int getId() {
         return this.id;
     }
